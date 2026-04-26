@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+        <title>{% block title %}{% endblock title %}</title>
+    </head>
+
+    <body>
+        <div id="content" style="height:100%;width:70%;float:left;">
+            {% block content %}
+            {% endblock content %}
+        </div>
+        <div id="sidebar" style="background-color:#EEEEEE;height:100%;width:30%;float:right;">
+            <h2>My blog</h2>
+            <p>This is my blog.</p>
+        </div>
+    </body>
+</html>

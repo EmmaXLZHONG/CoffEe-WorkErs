@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+
+{% block title %}CoffEe WorkErs{% endblock title %}
+{% block content %}
+<h1 style="background-color:powderblue">CoffEe WorkErs</h1>
+{% for post in posts %}
+<h4>
+    <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+</h4>
+<p class="date">Published {{ post.publish }} by {{ post.author }}</p>
+{{ post.body|truncatewords:30|linebreaks }}
+{% endfor %}    
+{% include "blog/pagination.html" with page=page_obj %}
+{% endblock content %}
