@@ -1,0 +1,24 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Share A Post{% endblock title %}
+{% block content %}
+{% if sent %}
+    <h1 style="background-color: black; color: whitesmoke;">Email Successfully Sent</h1><br>
+    <h5 style="color:darkgoldenrod; font-style: italic">'{{ post.title }}' was successfully sent to {{ cleaned_data.to.0 }}.</h5><br>
+    <h5 style="color:cornflowerblue">(\(^_^)/)</h5>
+{% else %}
+    <h1 style="background-color:gold; color: hotpink;">Share '{{ post.title }}' By Email</h1>
+    <form action="." method="post">
+        {% csrf_token %}
+        <h5>Name:</h5>
+        <input type="text" id="name" name="name" style="width: 30%" required><br><br>
+        <h5>From:</h5>
+        <input type="email" id="email" name="email" style="width: 30%;" required><br><br>
+        <h5>To:</h5>
+        <input type="email" id="to" name="to" style="width: 30%;" required><br><br>
+        <h5>Comments:</h5>
+        <textarea id="comments" name="comments" rows="14" cols="94" required></textarea><br><br>
+        <input type="submit" value="Send Email" style="background-color:orange; color: white;size: 10%;">
+    </form>
+{% endif %}
+{% endblock content %}
