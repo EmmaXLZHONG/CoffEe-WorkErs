@@ -7,8 +7,12 @@
 <h4>
     <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
 </h4>
-<p class="date">Published {{ post.publish }} by {{ post.author }}</p>
-{{ post.body|truncatewords:30|linebreaks }}
-{% endfor %}    
+<p class="tags" style="color:tomato;font-style:italic;font-size:smaller;">tags: {{ post.tags.all|join:", " }}</p>
+<p class="date" style="font-size:small; font-style: italic;color: chocolate;">Published {{ post.publish }} by {{ post.author }}</p>
+<div class="post" style="font-size: medium;">
+    {{ post.body|truncatewords:42|linebreaks }}
+</div>
+{% endfor %}
+<br>    
 {% include "blog/pagination.html" with page=page_obj %}
 {% endblock content %}
