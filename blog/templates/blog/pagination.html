@@ -2,11 +2,11 @@
     <h6>
         <span class="step-links">
         {% if page.has_previous %}
-            <a href="?page={{ page.previous_page_number }}" style="color:blueviolet;font-weight:bold;">Earlier </a>
+            <a href="?page={{ page.previous_page_number }}" style="color:blueviolet;font-weight: bold;">EARLIER </a>
         {% endif %}
-        <span class="current">Page {{ page.number }} of {{ page.paginator.num_pages }}</span>
+        <span class="current" style="color:mediumslateblue;font-weight:bold;">Page {{ page.number }} of {{ page.paginator.num_pages }}</span>
         {% if page.has_next %}
-            <a href="?page={{ page.next_page_number }}" style="color:blueviolet;font-weight:bold;"> Next</a>
+            <a href="?page={{ page.next_page_number }}" style="color:blueviolet;font-weight: bold;"> NEXT</a>
         {% endif %}
         </span>
     </h6>

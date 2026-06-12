@@ -1,6 +1,6 @@
 {% extends "blog/base.html" %}
 
-{% block title %}CoffEe WorkErs{% endblock title %}
+<div id="content">
 {% block content %}
 <h1 style="background-color:powderblue">CoffEe WorkErs</h1>
 {% for post in posts %}
@@ -15,4 +15,5 @@
 {% endfor %}
 <br>    
 {% include "blog/pagination.html" with page=page_obj %}
+</div>
 {% endblock content %}
