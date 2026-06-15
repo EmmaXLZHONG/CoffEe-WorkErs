@@ -1,4 +1,5 @@
 {% load static %}
+{% load blog_tags %}
 <!DOCTYPE html>
 <html>
     <head>
@@ -11,14 +12,44 @@
         <title>{% block title %}CoffEe WorkErs{% endblock title %}</title>
     </head>
     <body>
-        <div id="content" style="height:100%;width:70%;float:left;">
-           {% block content %}
-           {% endblock content %}
+        <div>
+            <div id="content" style="float:left;padding-left:2px;width:70vw;height: 100vh;">
+            {% block content %}
+            {% endblock content %}
+            </div>
+            
+            <div id="sidebar" style="background-color:#EEEEEE;float:left;width:30vw;height: 100vmax;">
+                <h2 style="color:tomato;">MY BLOG</h2>
+                <p style="font-family: Arial, Helvetica, sans-serif;">This is my blog, I've been written {% total_posts %} posts so far \\(o^_^o)// !!!!!</p>
+                <p style="font-family: Arial, Helvetica, sans-serif;">I like reading, sports, music and foods, and I want to know the world !!(o^_^o)!!</p>
+                <p style="font-family: Arial, Helvetica, sans-serif;">People learn to be happy and learn to be knowlegable, but still I believe the world is the teacher you will never exceed (o^_^o)</p>
+                
+                <h4 style="color:royalblue;">Simil@r Po$t</h4>
+                <ul>
+                    {% for post in similar_posts %}
+                    <li>
+                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                    </li>
+                    {% empty %}
+                    <li>
+                        <a style="color:limegreen">There are no similar posts</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+
+                <h4 style="color:violet;">LatEst P0$T</h4>
+                {% show_latest_posts 5 %}
+                <h4 style="color:rosybrown;">Mo$T CommenteD Po$t</h4>
+                {% get_most_commented_posts as most_commented_posts %}
+                <ul>
+                    {% for post in most_commented_posts %}
+                    <li>
+                        <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+
         </div>
-        <div id="sidebar" style="background-color:#EEEEEE;height:100%;width:30%;float:right;">
-            <h2>My Blog</h2>
-            <p>This is my blog (o^_^o)</p>
-        </div>
-        
     </body>
 </html>

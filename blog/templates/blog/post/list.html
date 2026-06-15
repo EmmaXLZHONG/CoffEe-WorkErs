@@ -12,8 +12,7 @@
 <div class="post" style="font-size: medium;">
     {{ post.body|truncatewords:42|linebreaks }}
 </div>
-{% endfor %}
-<br>    
+{% endfor %}   
 {% include "blog/pagination.html" with page=page_obj %}
 </div>
 {% endblock content %}
