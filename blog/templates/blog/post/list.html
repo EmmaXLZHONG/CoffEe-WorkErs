@@ -1,4 +1,5 @@
 {% extends "blog/base.html" %}
+{% load blog_tags %}
 
 <div id="content">
 {% block content %}
@@ -10,7 +11,7 @@
 <p class="tags" style="color:tomato;font-style:italic;font-size:smaller;">tags: {{ post.tags.all|join:", " }}</p>
 <p class="date" style="font-size:small; font-style: italic;color: chocolate;">Published {{ post.publish }} by {{ post.author }}</p>
 <div class="post" style="font-size: medium;">
-    {{ post.body|truncatewords:42|linebreaks }}
+    {{ post.body|markdown|truncatewords_html:42 }}
 </div>
 {% endfor %}   
 {% include "blog/pagination.html" with page=page_obj %}

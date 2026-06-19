@@ -1,11 +1,12 @@
 {% extends "blog/base.html" %}
+{% load blog_tags %}
 
 {% block title %}{{ post.title }}{% endblock title %}
 {% block content %}
 <div id="content">
     <h1 style="color:powderblue; background-color: black;">{{ post.title }}</h1>
     <p class="date" style="font-style: italic;">Published {{ post.publish }} by {{ post.author }}</p>
-    <div style="color:white;background-color:chocolate">{{ post.body|linebreaks }}</div>
+    <div style="color:white;background-color:chocolate">{{ post.body|markdown }}</div>
     <p><a href="{% url 'blog:post_share' post.id %}">share this post</a></p>
     
     <div id="comments" style="background-color:lightgoldenrodyellow; font-style: italic;">
