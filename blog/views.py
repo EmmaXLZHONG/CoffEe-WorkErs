@@ -10,13 +10,13 @@ from django.db.models import Count
 class PostListView(ListView):
     queryset = Post.published.all()
     context_object_name = 'posts'
-    paginate_by = 4
+    paginate_by = 8
     template_name = 'blog/post/list.html'
 
 def post_list(request, tag_slug=None):
     posts = Post.published.all()
     object_list = Post.published.all()
-    paginator = Paginator(object_list, 4)
+    paginator = Paginator(object_list, 8)
     page = request.GET.get('page')
     object_list = Post.published.all()
     tag = None

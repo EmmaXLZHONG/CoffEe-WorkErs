@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock title %}
+{% block content %}
+<h1 style="background-color:powderblue;font-size: xx-large;font-weight:bolder;">LOGIN</h1>
+<div id="Login" style="position: absolute;top:50%;left:50%;transform: translate(-50%, -50%); ">
+    <form action="." method="post" style="font-size:larger;font-weight: bold;">
+        {% csrf_token %}
+        <p><label>Username：</label><input type="text" name="username" style="float:right;">{{ form.username}}</p>
+        <p><label>Password：</label><input type="password" name="password" style="float:right;"> {{ form.password }}</p>
+        <p><input type="submit" value="Login" style="font-weight:500;float:right;"></p>
+    </form>
+</div>
+{% endblock content %}

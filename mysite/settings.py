@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1
 
 # Application definition
 
@@ -37,8 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+    'django.contrib.sitemaps',
     'blog',
     'taggit',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -126,7 +130,7 @@ EMAIL_USE_SSL = False
 EMAIL_HOST_USER = ''
 EMAIL_HOST_PASSWORD = ''
 
-
+LOGIN_REDIRECT_URL = ''
 
 
 

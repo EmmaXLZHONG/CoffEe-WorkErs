@@ -20,11 +20,12 @@
             </div>
             
             <div id="sidebar" style="background-color:#EEEEEE;float:left;width:30vw;height: 100vmax;">
-                <h2 style="color:tomato;">MY BLOG</h2>
+                <h2 style="color:tomato;">MY BLOG(<a href="">Login</a>)</h2>
                 <p style="font-family: Arial, Helvetica, sans-serif;">This is my blog, I've been written {% total_posts %} posts so far \\(o^_^o)// !!!!!</p>
                 <p style="font-family: Arial, Helvetica, sans-serif;">I like reading, sports, music and foods, and I want to know the world !!(o^_^o)!!</p>
                 <p style="font-family: Arial, Helvetica, sans-serif;">People learn to be happy and learn to be knowlegable, but still I believe the world is the teacher you will never exceed (o^_^o)</p>
-                
+                <p><a href="{% url 'blog:post_feed' %}">Subscribe to my RSS feed</a></p>
+
                 <h4 style="color:royalblue;">Simil@r Po$t</h4>
                 <ul>
                     {% for post in similar_posts %}
