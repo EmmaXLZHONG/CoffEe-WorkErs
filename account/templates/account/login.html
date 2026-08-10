@@ -3,7 +3,7 @@
 {% block title %}Login{% endblock title %}
 {% block content %}
 <h1 style="background-color:powderblue;font-size: xx-large;font-weight:bolder;">LOGIN</h1>
-<div id="Login" style="position: absolute;top:50%;left:50%;transform: translate(-50%, -50%); ">
+<div id="Login" style="position: absolute;top:50%;float:left:50%;transform: translate(-50%, -50%); ">
     <form action="." method="post" style="font-size:larger;font-weight: bold;">
         {% csrf_token %}
         <p><label>Username：</label><input type="text" name="username" style="float:right;">{{ form.username }}</p>
